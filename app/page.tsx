@@ -1,11 +1,11 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
+import { connect } from "@/utils/dbConnect/dbConnect";
 
-export default function Home() {
+export default async function Home() {
+  const dbConnection = await connect();
+  //console.log(dbConnection);
   return (
     <>
-      <Header />
       <main>
         <Banner 
           title="Explore"
@@ -14,7 +14,6 @@ export default function Home() {
           imageAlt="Photo of stacked guitar magazines"
         />
       </main>
-      <Footer />
     </>
   );
 }
