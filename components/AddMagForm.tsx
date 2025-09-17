@@ -32,9 +32,13 @@ export default function AddMagForm() {
           pages
         })
       });
-
-      response = await response.json();
-      if (response.success) {
+interface ApiResponse {
+  success: boolean;
+  message?: string; // Optional: if you also have a message property
+  data?: any; // Optional: for other data returned
+}
+      const data: ApiResponse = await response.json();
+      if (data.success) {
         setPublication("");
         setTitle("");
         setFullDate("");
@@ -43,9 +47,9 @@ export default function AddMagForm() {
         setVolume("");
         setIssue("");
         setPages("");
-        alert(response.message);
+        alert(data.message);
       } else {
-        alert(response.message);
+        alert(data.message);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
