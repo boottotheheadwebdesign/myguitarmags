@@ -15,7 +15,7 @@ export default function AddMagForm() {
     e.preventDefault();
    
     try {
-      let response = await fetch('/api/mags', {
+      const response = await fetch('/api/mags', {
         cache: 'no-store',
         method: 'POST',
         headers: {
@@ -32,11 +32,13 @@ export default function AddMagForm() {
           pages
         })
       });
-interface ApiResponse {
-  success: boolean;
-  message?: string; // Optional: if you also have a message property
-  data?: any; // Optional: for other data returned
-}
+
+      interface ApiResponse {
+        success: boolean;
+        message?: string; // Optional: if you also have a message property
+        data?: any; // Optional: for other data returned
+      }
+
       const data: ApiResponse = await response.json();
       if (data.success) {
         setPublication("");
