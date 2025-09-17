@@ -8,7 +8,7 @@ export default async function Home() {
     <>
       <main>
         <Banner 
-          title="Explore"
+          title="Explore!"
           description="Guitar magazine collection from 80s, 90s, and 2000s."
           imageSrc="/myguitarmags-stacks.jpg"
           imageAlt="Photo of stacked guitar magazines"
