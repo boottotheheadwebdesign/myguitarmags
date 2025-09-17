@@ -35,8 +35,7 @@ export default function AddMagForm() {
 
       interface ApiResponse {
         success: boolean;
-        message?: string; // Optional: if you also have a message property
-        data?: any; // Optional: for other data returned
+        message?: string;
       }
 
       const data: ApiResponse = await response.json();
