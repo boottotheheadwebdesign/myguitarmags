@@ -1,7 +1,9 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function AddMagForm() {
+  const router = useRouter();
   const [publication, setPublication] = useState("");
   const [title, setTitle] = useState("");
   const [fullDate, setFullDate] = useState("");
@@ -49,6 +51,7 @@ export default function AddMagForm() {
         setIssue("");
         setPages("");
         alert(data.message);
+        router.push('/view-mags');
       } else {
         alert(data.message);
       }

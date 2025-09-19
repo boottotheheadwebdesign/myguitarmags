@@ -14,6 +14,7 @@ export default function Header() {
           <div className="flex space-x-4">
             <Link href="/" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Home</Link>
             <Link href="/add-mag" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Add mag</Link>
+            <Link href="/view-mags" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">View mags</Link>
           </div>
         </div>
       </div>

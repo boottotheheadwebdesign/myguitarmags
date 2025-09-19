@@ -32,3 +32,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: false, message: "Server error" }, { status: 500 });
   }
 }
+
+export async function GET() {
+  try {
+    const allMags = await magsSchema.find().sort({ createdAt: -1 });
+    return NextResponse.json({ success: true, data: allMags }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ success: false, message: "No data found." }, { status: 500 });
+  }
+}
