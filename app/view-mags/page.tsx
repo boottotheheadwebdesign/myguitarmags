@@ -8,6 +8,19 @@ async function fetchMags() {
   return data;
 }
 
+interface Mag {
+  _id: string;
+  publication: string;
+  title: string;
+  fullDate: string;
+  pubMonth: string;
+  pubYear: string;
+  volume: string;
+  issue: string;
+  pages: string;
+  createdAt: string;
+}
+
 export default async function ViewMags() {
   const allMags = await fetchMags();
 
@@ -32,7 +45,7 @@ export default async function ViewMags() {
                 </tr>
               </thead>
               <tbody>
-                {mags.map((mag: any, index: number) => (
+                {mags.map((mag: Mag, index: number) => (
                   <tr key={mag._id}>
                     <td className="py-2 px-4 border-b border-gray-200 text-sm">{index + 1}. {mag._id}</td>
                     <td className="py-2 px-4 border-b border-gray-200 text-sm">{mag.publication}</td>
