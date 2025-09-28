@@ -8,7 +8,7 @@ interface Params {
 }
 
 export async function GET(request: Request, {params}: {params: Params}){
-  const magid = await params.magid;
+  const magid = params.magid;
   try {
     const result = await Mag.findOne({ _id: magid });
     return NextResponse.json({success: true, data: result, message: `Fetched magazine with ID ${magid}`});
