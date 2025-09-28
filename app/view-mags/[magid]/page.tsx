@@ -20,7 +20,7 @@ export default async function viewMag(props: ViewMagProps) {
   const mag = result.data;
   return (
     <div>
-      <h1>Magazine Details</h1>
+      <h1>Magazine Details!!</h1>
       {/* <pre>{JSON.stringify(mag, null, 2)}</pre> */}
       <h2>{mag.publication}</h2>
       <p>{mag.title}</p>
