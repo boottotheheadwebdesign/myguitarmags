@@ -4,7 +4,7 @@ import Mag from "@/utils/schema/magsSchema";
 connect();
 
 interface Params {
-  magid: string;
+  magid: any;
 }
 
 export async function GET(request: Request, {params}: {params: Params}){
