@@ -3,11 +3,7 @@ import { NextResponse } from "next/server";
 import Mag from "@/utils/schema/magsSchema";
 connect();
 
-interface Params {
-  magid: string;
-}
-
-export async function GET(request: Request, {params}: {params: Params}){
+export async function GET(request: Request, {params}: {params: Promise<{magid: string}>}){
   const awaitedParams = await params;
   const magid = awaitedParams.magid;
   try {
