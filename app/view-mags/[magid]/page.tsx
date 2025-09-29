@@ -1,5 +1,5 @@
 async function getSingleMag(magIdParam: string) {
-  const response = await fetch(`http://localhost:3000/api/mags/${magIdParam}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mags/${magIdParam}`, {
     cache: 'no-store',
     method: 'GET'
   });

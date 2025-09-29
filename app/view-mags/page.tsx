@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 async function fetchMags() {
-  const response = await fetch('http://localhost:3000/api/mags', { 
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mags`, { 
     cache: 'no-store' 
   });
   const data = await response.json();
