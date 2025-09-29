@@ -8,10 +8,10 @@ interface Params {
 }
 
 export async function GET(request: Request, {params}: {params: Params}){
-  const magid = params.magid;
+  const magId = params.magid;
   try {
-    const result = await Mag.findOne({ _id: magid });
-    return NextResponse.json({success: true, data: result, message: `Fetched magazine with ID ${magid}`});
+    const result = await Mag.findOne({ _id: magId });
+    return NextResponse.json({success: true, data: result, message: `Fetched magazine with ID ${magId}`});
   } catch (error) {
     return NextResponse.json({success: false, message: "Could not fetch data."});
   }
