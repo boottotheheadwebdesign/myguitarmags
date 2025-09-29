@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import Mag from "@/utils/schema/magsSchema";
 connect();
 
-interface Params {
+interface Params extends NextResponse {
   magid: object;
 }
 
